@@ -5,7 +5,7 @@
   "description": "Modern website for Redshifted's Hardware Hackathon",
   "author": "Redshifted",
   "license": "MIT",
-  "homepage": "https://your-site.vercel.app",
+  "homepage": "https://catalyst.redshifted.ca/",
   "repository": {
     "type": "git",
     "url": "https://github.com/TheBlisteringSun/catalyst"
