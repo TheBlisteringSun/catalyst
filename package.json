@@ -1,0 +1,62 @@
+{
+  "name": "catalyst",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Modern website for Redshifted's Hardware Hackathon",
+  "author": "Redshifted",
+  "license": "MIT",
+  "homepage": "https://your-site.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheBlisteringSun/catalyst"
+  },
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "format": "prettier --write .",
+    "type-check": "tsc --noEmit",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.1.1",
+    "@react-three/drei": "^10.3.0",
+    "@react-three/fiber": "^9.1.4",
+    "@types/three": "^0.177.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.19.2",
+    "lottie-react": "^2.4.1",
+    "lucide-react": "^0.525.0",
+    "next": "15.3.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.59.0",
+    "tailwind-merge": "^2.6.0",
+    "three": "^0.177.0",
+    "zod": "^3.25.67"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20.19.2",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.4",
+    "lint-staged": "^16.1.2",
+    "prettier": "^3.6.2",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,css}": [
+      "prettier --write"
+    ]
+  }
+}
