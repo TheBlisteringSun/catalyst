@@ -33,7 +33,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
                 <MapPin className="w-5 h-5" />
-                <span>Ottawa's very first hardware hackathon!</span>
+                <span>Ottawa&apos;s very first hardware hackathon!</span>
               </div>
               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
                 <Users className="w-5 h-5" />
@@ -77,7 +77,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            Ottawa's first hardware hackathon!
+            Ottawa&apos;s first hardware hackathon!
           </motion.p>
           
           <motion.div
