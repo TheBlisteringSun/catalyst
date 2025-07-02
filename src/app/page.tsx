@@ -55,7 +55,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-black/20" />
           <a href="https://redshifted.ca" className="absolute top-5 left-5 transform w-[200px] h-[100px] rounded-lg">
             <Image 
@@ -75,44 +75,49 @@ export default function Home() {
             <p>SIGN UP</p>
         </a>
         </motion.div>
+        <div className="absolute resize top-20 left-1/2 transform -translate-x-1/2 select-none box-border">
         <Image
               src="/meteor.png"  // Use the path to your image
               alt="Centered"
-              width={300}  // Specify width
-              height={300} // Specify height
-              className="absolute top-1 left-1/2 transform -translate-x-1/2 select-none"
+              width={300} // Dynamic width based on window width
+              height={300} // Dynamic height based on aspect ratio
+              className="object-contain"
         />
-        <Image
-              src="/crater.png"  // Use the path to your image
-              alt="Centered"
-              width={300}  // Specify width
-              height={300} // Specify height
-              className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-8 select-none"
+        </div>
+      <Image
+          src="/crater.png"
+          alt="Centered"
+          width={300} // Dynamic width based on window width
+          height={300} // Dynamic height based on aspect ratio
+          className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-8 select-none p-4 object-contain"
         />
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative z-10 text-center text-white max-w-4xl mx-auto px-4"
+          className="inset-0 z-10 flex flex-col items-center justify-center text-center text-white max-w-full px-4 py-4"
         >
+          {/* Catalyst Heading */}
           <motion.h1
-            className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
+            className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
             Catalyst
           </motion.h1>
-          
+
+          {/* Description */}
           <motion.p
-            className="text-xl md:text-2xl mb-8 text-gray-300"
+            className="text-xl sm:text-2xl mb-8 text-gray-300"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
             Ottawa&apos;s first hardware hackathon!
           </motion.p>
-          
+
+          {/* Flex Items */}
           <motion.div
             className="flex flex-wrap justify-center gap-6 mb-8"
             initial={{ opacity: 0 }}
@@ -155,27 +160,36 @@ export default function Home() {
           className="w-8xl mx-auto grid md:grid-cols-2 gap-12 items-center left-10"
         >
           <motion.div
-              className="container bg-purple-600 py-6 mx-auto px-4 md:px-8 lg:px-16 text-5xl mb-4 shadow-[0_4px_20px_rgba(255,0,0,0.5)]"
+              className="container bg-purple-600 py-6 mx-auto px-4 md:px-8 lg:px-16 text-5xl mb-4 shadow-[0_4px_20px_rgba(255,0,0,0.5)] box-border m-0 min-w-0 max-w-full h-auto"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
           >
-          
+            <div className="item flex-1 w-full">
             <h2 className="text-3xl md:text-1xl font-bold mb-6 bg-blue-400 bg-clip-text text-transparent">
               What is <span className="text-3xl md:text-1xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Catalyst</span>?
             </h2>
             <p className="text-lg md:text-xl text-white leading-relaxed max-w-3xl mx-auto">
               Catalyst is a groundbreaking, fully student-organized, hardware hackathon - the first of its kind in all of Ottawa. In Catalyst, participants will race against the clock to build a project while discovering new things, displaying their talents, and collaborating with others. What seperates a hardware hackathon with a normal hackathon? Traditional hackathons are software-focused, where participants are asked to make a computer game in 24 hours. Our hackathon will bring together people of various skills and backgrounds, from programmers to mechanical engineering, to build something greater than what any single person can do alone. 
             </p>
-          
-          </motion.div>
-          <div className="flex-shrink-0 mb-6 lg:mb-0 lg:w-1/2 mx-auto lg:mx-0 lg:ml-12">
-            <img
-              src="/globe.svg"
-              alt="Image Description"
-              className="w-full max-w-xs lg:max-w-sm rounded-lg shadow-lg"
-            />
           </div>
+          </motion.div>
+          <motion.div
+              className="container bg-purple-600 py-6 mx-auto px-4 md:px-8 lg:px-16 text-5xl mb-4 shadow-[0_4px_20px_rgba(255,0,0,0.5)]"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+          >
+            <div className="item flex-1 w-full text-3xl md:text-1xl font-bold mb-6 bg-blue-400 bg-clip-text text-transparent box-border m-0 min-w-0 max-w-full h-auto">
+              <img
+                src="/globe.svg"
+                alt="Image Description"
+                width="300"
+                height="300"
+                className="select-none"
+              />
+              </div>
+            </motion.div>
         </motion.div>
       </section>
       {/*Scheldule section */}
@@ -187,7 +201,7 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="relative z-10 text-center text-white max-w-4xl mx-auto px-4"
         >
-          Scheldule
+          Schedule
 
         </motion.div>
       </section>
