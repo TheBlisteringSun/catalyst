@@ -353,7 +353,7 @@ export default function Home() {
         >
           <h2 className="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
           <p className="text-lg text-gray-300 mb-12">
-            <span>Got questions? We&aops;ve got answers. Here&aops;s everything you need to know about Catalyst.</span>
+            <span>Got questions? We&apos;ve got answers. Here&apos;s everything you need to know about Catalyst.</span>
           </p>
 
           <div className="space-y-8 text-left">
