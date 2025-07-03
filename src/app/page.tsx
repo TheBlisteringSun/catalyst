@@ -237,15 +237,15 @@ export default function Home() {
             <div className="space-y-4 sm:space-y-6">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 sm:mb-6">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400">
-                  About_Us.exe 
+                  About Catalyst.exe 
                 </span>
               </h2>
               
               {/* Typing animation effect */}
               <div className="relative">
                 <div className="absolute -left-2 top-0 w-1 h-full bg-blue-400 animate-pulse"></div>
-                <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-gray-300 leading-relaxed pl-4 font-mono">
-                  <span className="text-purple-400">&gt;</span> <span className="text-white">Catalyst</span> Catalyst is Ottawa’s first high-school hardware hackathon, a 24‑hour innovation sprint where teams go from idea to working prototype under tight timelines. Unlike traditional software hackathons, Catalyst empowers students to design, build, and test physical hardware from circuits and sensors to mechanical systems with expert mentorship and hands-on support.
+                <p className="text-md md:text-base lg:text-lg xl:text-xl text-gray-300 leading-relaxed pl-4 font-mono">
+                  <span className="text-purple-400">&gt;</span> <span className="text-white">Catalyst</span> is Ottawa’s first high-school hardware hackathon, a 24‑hour innovation sprint where teams go from idea to working prototype under tight timelines. Unlike traditional software hackathons, Catalyst empowers students to design, build, and test physical hardware from circuits and sensors to mechanical systems with expert mentorship and hands-on support.
                 </p>
               </div>
               
@@ -336,7 +336,7 @@ export default function Home() {
         >
           {/* Add logos/components here */}
           <div className="col-span-full text-gray-400 italic">
-            Sponsor logos coming soon...
+            Contact andy.han2027@gmail.com for sponsoring this event.
           </div>
         </motion.div>
       </div>
