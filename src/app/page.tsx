@@ -22,31 +22,12 @@ export default function Home() {
           
           <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
             <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Catalyst
+              Loading...
             </h1>
             
             <p className="text-xl md:text-2xl mb-8 text-gray-300">
               Build the future with hardware and code
             </p>
-            
-            <div className="flex flex-wrap justify-center gap-6 mb-8">
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                <Calendar className="w-5 h-5" />
-                <span>November XX, 2025</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                <MapPin className="w-5 h-5" />
-                <span>Ottawa&apos;s very first hardware hackathon!</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-                <Users className="w-5 h-5" />
-                <span>100+ Hackers</span>
-              </div>
-            </div>
-            
-            <button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105">
-              Register Now
-            </button>
           </div>
         </section>
       </main>
@@ -55,112 +36,173 @@ export default function Home() {
 
     return (
     <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+
       {/* Hero Section */}
+
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0" />
-            {/* Background circuit pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(90deg,transparent_24%,rgba(96,165,250,0.03)_25%,rgba(96,165,250,0.03)_26%,transparent_27%,transparent_74%,rgba(147,51,234,0.03)_75%,rgba(147,51,234,0.03)_76%,transparent_77%),linear-gradient(rgba(96,165,250,0.03)_50%,transparent_50%)] bg-[size:50px_50px]" />
-      </div>
+        {/* Enhanced Background with animated gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900/30 to-purple-900 animate-pulse" />
+        
+        {/* Multiple layered circuit patterns */}
+        <div className="absolute inset-0 opacity-15">
+          <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(90deg,transparent_24%,rgba(96,165,250,0.05)_25%,rgba(96,165,250,0.05)_26%,transparent_27%,transparent_74%,rgba(147,51,234,0.05)_75%,rgba(147,51,234,0.05)_76%,transparent_77%),linear-gradient(rgba(96,165,250,0.05)_50%,transparent_50%)] bg-[size:80px_80px] animate-pulse" />
+          <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(45deg,transparent_24%,rgba(59,130,246,0.03)_25%,rgba(59,130,246,0.03)_26%,transparent_27%,transparent_74%,rgba(168,85,247,0.03)_75%,rgba(168,85,247,0.03)_76%,transparent_77%)] bg-[size:120px_120px] animate-pulse [animation-delay:2s]" />
+        </div>
 
-      {/* Glowing orbs */}
-      <div className="absolute top-10 left-10 w-20 h-20 bg-blue-400/20 rounded-full blur-xl animate-pulse" />
-      <div className="absolute bottom-10 right-10 w-24 h-24 bg-purple-600/20 rounded-full blur-xl animate-pulse [animation-delay:1s]" />
+        {/* Enhanced glowing orbs */}
+        <div className="absolute top-10 left-10 w-32 h-32 bg-blue-400/30 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-1/4 right-20 w-24 h-24 bg-cyan-400/25 rounded-full blur-2xl animate-pulse [animation-delay:1s]" />
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-purple-600/30 rounded-full blur-3xl animate-pulse [animation-delay:2s]" />
+        <div className="absolute bottom-1/4 left-20 w-28 h-28 bg-indigo-500/25 rounded-full blur-2xl animate-pulse [animation-delay:3s]" />
+        
+        {/* Animated light beams */}
+        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-blue-400/50 to-transparent animate-pulse" />
+        <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-purple-400/50 to-transparent animate-pulse [animation-delay:1s]" />
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0  " />
+        {/* Subtle corner frames */}
+        <div className="absolute top-8 left-8 w-20 h-20 border-t-4 border-l-4 border-blue-400/40 rounded-tl-lg" />
+        <div className="absolute top-8 right-8 w-20 h-20 border-t-4 border-r-4 border-purple-400/40 rounded-tr-lg" />
+        <div className="absolute bottom-8 left-8 w-20 h-20 border-b-4 border-l-4 border-cyan-400/40 rounded-bl-lg" />
+        <div className="absolute bottom-8 right-8 w-20 h-20 border-b-4 border-r-4 border-violet-400/40 rounded-br-lg" />
 
-      {/* Centered content box */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="relative z-10 max-w-2xl text-center bg-gradient-to-br from-slate-800/80 to-purple-900/80 backdrop-blur-lg border border-blue-400/30 rounded-2xl px-6 py-10 shadow-[0_8px_32px_rgba(96,165,250,0.3)]"
-      >
-        {/* Circuit-style corners */}
-        <div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-blue-400" />
-        <div className="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 border-blue-400" />
-        <div className="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 border-blue-400" />
-        <div className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-blue-400" />
-
-        {/* Title */}
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-4">
-          Catalyst
-        </h1>
-
-        {/* Typing animation */}
-        <TypeAnimation
-          sequence={[
-            "Ottawa's first hardware hackathon",
-            2000,
-            "Where hardware meets imagination",
-            2000,
-            "Join the revolution.",
-            2000,
-          ]}
-          wrapper="p"
-          cursor={true}
-          repeat={Infinity}
-          className="text-base sm:text-lg lg:text-xl text-gray-300 font-mono leading-relaxed mb-6"
-        />
-
-        {/* Event info chips */}
+        {/* Full-screen content */}
         <motion.div
-          className="flex flex-wrap justify-center gap-4 mb-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.5 }}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2 }}
+          className="relative z-10 w-full max-w-7xl mx-auto text-center px-8"
         >
-          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white">
-            <Calendar className="w-5 h-5" />
-            <span>November XX 2025</span>
-          </div>
-          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white">
-            <MapPin className="w-5 h-5" />
-            <span>Ottawa, Canada</span>
-          </div>
-          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white">
-            <Users className="w-5 h-5" />
-            <span>100+ hackers</span>
-          </div>
-        </motion.div>
-
-        {/* Register button */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8, duration: 0.5 }}
-        >
-          <a
-            href="https://forms.gle/b2n71kTgUs7ddHD98"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+          {/* Title */}
+          <motion.h1 
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.5, delay: 0.3 }}
+            className="text-6xl sm:text-7xl lg:text-8xl xl:text-[9rem] font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 mb-4 tracking-wider drop-shadow-2xl"
           >
-            Register Now
-          </a>
-        </motion.div>
-      </motion.div>
-      {/*
-        <a href="https://redshifted.ca" className="absolute top-5 left-5 transform w-[200px] h-[100px] rounded-lg">
+            CATALYST
+          </motion.h1>
+
+          {/* Glowing underline */}
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: '100%' }}
+            transition={{ duration: 1.5, delay: 1 }}
+            className="h-2 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-full mx-auto mb-8 max-w-2xl shadow-[0_0_20px_rgba(96,165,250,0.8)]"
+          />
+
+          {/* Presented by and Logo */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.5 }}
+            className="flex flex-col items-center mb-12"
+          >
+            <p className="text-lg text-gray-300 mb-4 font-light tracking-wide">presented by</p>
             <Image 
-              src="/logo.png" 
-              alt="Logo."
-              width={200}                 
-              height={100}   
+              src="/logo_red.png" 
+              alt="Redshifted" 
+              width={400}
+              height={100}
+              className="opacity-90 filter drop-shadow-lg"
             />
-        </a>
-         */}
-        <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+          </motion.div>
+
+          {/* Typing animation */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 2 }}
+            className="mb-14"
           >
-        <a href="https://forms.gle/5sfQv4g3Fby8QF9h9" className="rounded-lg absolute top-10 bg-blue-400 right-10 p-3 shadow-[0_4px_20px_rgba(30,144,255,1)] hover:scale-110 transition-transform duration-300">
-            <p>SIGN UP</p>
-        </a>
+            <TypeAnimation
+              sequence={[
+                "Ottawa's first hardware hackathon",
+                3000,
+                "Where hardware meets imagination",
+                3000,
+                "Build the impossible. Code the future.",
+                3000,
+                "Join the revolution.",
+                3000,
+              ]}
+              wrapper="p"
+              cursor={true}
+              repeat={Infinity}
+              className="text-xl sm:text-2xl lg:text-3xl text-gray-200 font-mono leading-relaxed font-light tracking-wide drop-shadow-lg"
+            />
+          </motion.div>
+
+          {/* Event info chips */}
+          <motion.div
+            className="flex flex-wrap justify-center gap-4 mb-14"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 2.5, duration: 0.8 }}
+          >
+            <div className="flex items-center gap-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-xl px-6 py-3 rounded-2xl text-white border border-blue-400/30 shadow-[0_8px_32px_rgba(96,165,250,0.3)]">
+              <Calendar className="w-5 h-5" />
+              <span className="text-lg font-medium">November XX 2025</span>
+            </div>
+            <div className="flex items-center gap-2 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 backdrop-blur-xl px-6 py-3 rounded-2xl text-white border border-purple-400/30 shadow-[0_8px_32px_rgba(147,51,234,0.3)]">
+              <MapPin className="w-5 h-5" />
+              <span className="text-lg font-medium">Ottawa, Canada</span>
+            </div>
+            <div className="flex items-center gap-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 backdrop-blur-xl px-6 py-3 rounded-2xl text-white border border-cyan-400/30 shadow-[0_8px_32px_rgba(34,211,238,0.3)]">
+              <Users className="w-5 h-5" />
+              <span className="text-lg font-medium">100+ hackers</span>
+            </div>
+          </motion.div>
+
+          {/* Register button */}
+          <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 3, duration: 0.8 }}
+              className="relative"
+          >
+            <motion.div
+              className="relative group"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              
+              {/* Animated particles on hover */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute -top-2 -left-2 w-1 h-1 bg-yellow-400 rounded-full animate-ping" />
+                <div className="absolute -top-1 -right-1 w-1 h-1 bg-orange-400 rounded-full animate-ping [animation-delay:0.2s]" />
+                <div className="absolute -bottom-2 -left-1 w-1 h-1 bg-red-400 rounded-full animate-ping [animation-delay:0.4s]" />
+                <div className="absolute -bottom-1 -right-2 w-1 h-1 bg-yellow-400 rounded-full animate-ping [animation-delay:0.6s]" />
+                <div className="absolute top-1/2 -left-3 w-1 h-1 bg-orange-400 rounded-full animate-ping [animation-delay:0.8s]" />
+                <div className="absolute top-1/2 -right-3 w-1 h-1 bg-red-400 rounded-full animate-ping [animation-delay:1s]" />
+              </div>
+              
+              {/* Main button */}
+            
+              <a
+                href="https://forms.gle/b2n71kTgUs7ddHD98"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative inline-block bg-gradient-to-r from-blue-500 to-purple-600 hover:from-red-500 hover:via-orange-500 hover:to-yellow-500 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform shadow-[0_4px_20px_rgba(59,130,246,0.6)] hover:shadow-[0_8px_40px_rgba(249,115,22,0.8)] border-2 border-blue-400/50 hover:border-orange-400/80"
+              >
+                <span className="relative z-10">REGISTER NOW</span>
+              </a>
+
+            </motion.div>
+        
+            {/* Floating particles */}
+            <div className="absolute top-20 left-1/4 w-2 h-2 bg-blue-400 rounded-full animate-bounce opacity-60" />
+            <div className="absolute top-32 right-1/4 w-3 h-3 bg-purple-400 rounded-full animate-bounce opacity-60 [animation-delay:1s]" />
+            <div className="absolute bottom-32 left-1/3 w-2 h-2 bg-cyan-400 rounded-full animate-bounce opacity-60 [animation-delay:2s]" />
+            <div className="absolute bottom-20 right-1/3 w-3 h-3 bg-violet-400 rounded-full animate-bounce opacity-60 [animation-delay:3s]" />
+          </motion.div>
+
+          {/* Animated scan lines */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-400/5 to-transparent animate-pulse pointer-events-none" />
+        
         </motion.div>
+      
       </section>
+
       {/*About Us*/}
       <section className="relative h-screen flex items-center justify-center overflow-hidden from-slate-900 via-purple-900 to-slate-900">
         {/* Animated circuit pattern background */}
@@ -243,7 +285,7 @@ export default function Home() {
                 <div className="absolute inset-6 sm:inset-8 border-2 border-purple-400/30 rounded-full animate-spin animate-reverse"></div>
                 <div className="absolute inset-9 sm:inset-12 border-2 border-blue-500/30 rounded-full animate-spin"></div>
                 
-                {/* Angler Fish SVG */}
+                {/* Angler Fish Image*/}
                 <div className="relative z-10 w-96 h-96 sm:w-120 sm:h-120 lg:w-144 lg:h-144 flex items-center justify-center">
                   <Image
                   src="/fish3.png"
