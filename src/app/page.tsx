@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Calendar, MapPin, Users } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import Image from 'next/image';
+import { TypeAnimation } from "react-type-animation";
 
 
 export default function Home() {
@@ -15,9 +16,9 @@ export default function Home() {
 
   if (!mounted) {
     return (
-      <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      <main className="min-h-screen from-slate-900 via-purple-900 to-slate-900">
         <section className="relative h-screen flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0" />
           
           <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
             <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
@@ -39,7 +40,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
                 <Users className="w-5 h-5" />
-                <span>200+ Hackers</span>
+                <span>100+ Hackers</span>
               </div>
             </div>
             
@@ -52,20 +53,104 @@ export default function Home() {
     )
   }
 
-  return (
+    return (
     <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-black/20" />
-          <a href="https://redshifted.ca" className="absolute top-5 left-5 transform w-[200px] h-[100px] rounded-lg">
+        <div className="absolute inset-0" />
+            {/* Background circuit pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(90deg,transparent_24%,rgba(96,165,250,0.03)_25%,rgba(96,165,250,0.03)_26%,transparent_27%,transparent_74%,rgba(147,51,234,0.03)_75%,rgba(147,51,234,0.03)_76%,transparent_77%),linear-gradient(rgba(96,165,250,0.03)_50%,transparent_50%)] bg-[size:50px_50px]" />
+      </div>
+
+      {/* Glowing orbs */}
+      <div className="absolute top-10 left-10 w-20 h-20 bg-blue-400/20 rounded-full blur-xl animate-pulse" />
+      <div className="absolute bottom-10 right-10 w-24 h-24 bg-purple-600/20 rounded-full blur-xl animate-pulse [animation-delay:1s]" />
+
+      {/* Dark overlay */}
+      <div className="absolute inset-0  " />
+
+      {/* Centered content box */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="relative z-10 max-w-2xl text-center bg-gradient-to-br from-slate-800/80 to-purple-900/80 backdrop-blur-lg border border-blue-400/30 rounded-2xl px-6 py-10 shadow-[0_8px_32px_rgba(96,165,250,0.3)]"
+      >
+        {/* Circuit-style corners */}
+        <div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-blue-400" />
+        <div className="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 border-blue-400" />
+        <div className="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 border-blue-400" />
+        <div className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-blue-400" />
+
+        {/* Title */}
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-4">
+          Catalyst
+        </h1>
+
+        {/* Typing animation */}
+        <TypeAnimation
+          sequence={[
+            "Ottawa's first hardware hackathon",
+            2000,
+            "Where hardware meets imagination",
+            2000,
+            "Join the revolution.",
+            2000,
+          ]}
+          wrapper="p"
+          cursor={true}
+          repeat={Infinity}
+          className="text-base sm:text-lg lg:text-xl text-gray-300 font-mono leading-relaxed mb-6"
+        />
+
+        {/* Event info chips */}
+        <motion.div
+          className="flex flex-wrap justify-center gap-4 mb-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+        >
+          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white">
+            <Calendar className="w-5 h-5" />
+            <span>August XX 2025</span>
+          </div>
+          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white">
+            <MapPin className="w-5 h-5" />
+            <span>Ottawa, Canada</span>
+          </div>
+          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white">
+            <Users className="w-5 h-5" />
+            <span>100+ hackers</span>
+          </div>
+        </motion.div>
+
+        {/* Register button */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8, duration: 0.5 }}
+        >
+          <a
+            href="https://forms.gle/b2n71kTgUs7ddHD98"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+          >
+            Register Now
+          </a>
+        </motion.div>
+      </motion.div>
+      {/*
+        <a href="https://redshifted.ca" className="absolute top-5 left-5 transform w-[200px] h-[100px] rounded-lg">
             <Image 
-              src="/image.png" 
+              src="/logo.png" 
               alt="Logo."
               width={200}                 
               height={100}   
             />
         </a>
-
+         */}
         <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -75,164 +160,216 @@ export default function Home() {
             <p>SIGN UP</p>
         </a>
         </motion.div>
-        <div className="absolute resize top-20 left-1/2 transform -translate-x-1/2 select-none box-border">
-        <Image
-              src="/meteor.png"  // Use the path to your image
-              alt="Centered"
-              width={300} // Dynamic width based on window width
-              height={300} // Dynamic height based on aspect ratio
-              className="object-contain"
-        />
-        </div>
-      <Image
-          src="/crater.png"
-          alt="Centered"
-          width={300} // Dynamic width based on window width
-          height={300} // Dynamic height based on aspect ratio
-          className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-8 select-none p-4 object-contain"
-        />
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="inset-0 z-10 flex flex-col items-center justify-center text-center text-white max-w-full px-4 py-4"
-        >
-          {/* Catalyst Heading */}
-          <motion.h1
-            className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
-            initial={{ scale: 0.8 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-          >
-            Catalyst
-          </motion.h1>
-
-          {/* Description */}
-          <motion.p
-            className="text-xl sm:text-2xl mb-8 text-gray-300"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
-          >
-            Ottawa&apos;s first hardware hackathon!
-          </motion.p>
-
-          {/* Flex Items */}
-          <motion.div
-            className="flex flex-wrap justify-center gap-6 mb-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.5 }}
-          >
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-              <Calendar className="w-5 h-5" />
-              <span>August XX 2025</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-              <MapPin className="w-5 h-5" />
-              <span>Ottawa, Canada</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
-              <Users className="w-5 h-5" />
-              <span>30+ hackers</span>
-            </div>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
-          >
-            <button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105">
-              <a href="https://forms.gle/b2n71kTgUs7ddHD98">Register Now</a>
-            </button>
-          </motion.div>
-        </motion.div>
-        
       </section>
       {/*About Us*/}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-black/20" />
+      <section className="relative h-screen flex items-center justify-center overflow-hidden from-slate-900 via-purple-900 to-slate-900">
+        {/* Animated circuit pattern background */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(90deg,transparent_24%,rgba(96,165,250,0.03)_25%,rgba(96,165,250,0.03)_26%,transparent_27%,transparent_74%,rgba(147,51,234,0.03)_75%,rgba(147,51,234,0.03)_76%,transparent_77%),linear-gradient(rgba(96,165,250,0.03)_50%,transparent_50%)] bg-[size:50px_50px]"></div>
+        </div>
+        
+        {/* Glowing orbs */}
+        <div className="absolute top-10 left-4 sm:top-20 sm:left-20 w-16 h-16 sm:w-32 sm:h-32 bg-blue-400/20 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-10 right-4 sm:bottom-20 sm:right-20 w-20 h-20 sm:w-40 sm:h-40 bg-purple-600/20 rounded-full blur-xl animate-pulse delay-1000"></div>
+        
+        <div className="absolute inset-0" />
+        
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="w-8xl mx-auto grid md:grid-cols-2 gap-12 items-center left-10"
+          className="w-full max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center px-4 sm:px-6 lg:px-8"
         >
           <motion.div
-              className="container bg-purple-600 py-6 mx-auto px-4 md:px-8 lg:px-16 text-5xl mb-4 shadow-[0_4px_20px_rgba(255,0,0,0.5)] box-border m-0 min-w-0 max-w-full h-auto"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+            className="relative bg-gradient-to-br from-slate-800/80 to-purple-900/80 backdrop-blur-lg border border-blue-400/30 rounded-xl lg:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-[0_8px_32px_rgba(96,165,250,0.3)]"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="item flex-1 w-full">
-            <h2 className="text-3xl md:text-1xl font-bold mb-6 bg-blue-400 bg-clip-text text-transparent">
-              What is <span className="text-3xl md:text-1xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Catalyst</span>?
-            </h2>
-            <p className="text-lg md:text-xl text-white leading-relaxed max-w-3xl mx-auto">
-              Catalyst is a groundbreaking, fully student-organized, hardware hackathon - the first of its kind in all of Ottawa. In Catalyst, participants will race against the clock to build a project while discovering new things, displaying their talents, and collaborating with others. What seperates a hardware hackathon with a normal hackathon? Traditional hackathons are software-focused, where participants are asked to make a computer game in 24 hours. Our hackathon will bring together people of various skills and backgrounds, from programmers to mechanical engineering, to build something greater than what any single person can do alone. 
-            </p>
-          </div>
-          </motion.div>
-          <motion.div
-              className="container bg-purple-600 py-6 mx-auto px-4 md:px-8 lg:px-16 text-5xl mb-4 shadow-[0_4px_20px_rgba(255,0,0,0.5)]"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-          >
-            <div className="item flex-1 w-full text-3xl md:text-1xl font-bold mb-6 bg-blue-400 bg-clip-text text-transparent box-border m-0 min-w-0 max-w-full h-auto">
-              <img
-                src="/globe.svg"
-                alt="Image Description"
-                width="300"
-                height="300"
-                className="select-none"
-              />
+            {/* Circuit corner decorations */}
+            <div className="absolute top-2 left-2 sm:top-4 sm:left-4 w-4 h-4 sm:w-6 sm:h-6 border-l-2 border-t-2 border-blue-400"></div>
+            <div className="absolute top-2 right-2 sm:top-4 sm:right-4 w-4 h-4 sm:w-6 sm:h-6 border-r-2 border-t-2 border-blue-400"></div>
+            <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 w-4 h-4 sm:w-6 sm:h-6 border-l-2 border-b-2 border-blue-400"></div>
+            <div className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 w-4 h-4 sm:w-6 sm:h-6 border-r-2 border-b-2 border-blue-400"></div>
+            
+            <div className="space-y-4 sm:space-y-6">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 sm:mb-6">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400">
+                  About_Us.exe 
+                </span>
+              </h2>
+              
+              {/* Typing animation effect */}
+              <div className="relative">
+                <div className="absolute -left-2 top-0 w-1 h-full bg-blue-400 animate-pulse"></div>
+                <p className="text-sm sm:text-base lg:text-lg xl:text-xl text-gray-300 leading-relaxed pl-4 font-mono">
+                  <span className="text-purple-400">&gt;</span> <span className="text-white">Catalyst</span> Catalyst is Ottawa’s first high-school hardware hackathon, a 24‑hour innovation sprint where teams go from idea to working prototype under tight timelines. Unlike traditional software hackathons, Catalyst empowers students to design, build, and test physical hardware from circuits and sensors to mechanical systems with expert mentorship and hands-on support.
+                </p>
               </div>
-            </motion.div>
+              
+              {/* Status indicators */}
+              <div className="flex flex-wrap gap-3 sm:gap-4 mt-4 sm:mt-6">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 bg-blue-400 rounded-full animate-pulse"></div>
+                  <span className="text-xs sm:text-sm text-gray-400 font-mono">ONLINE</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 bg-purple-400 rounded-full animate-pulse delay-500"></div>
+                  <span className="text-xs sm:text-sm text-gray-400 font-mono">READY</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 bg-blue-500 rounded-full animate-pulse delay-1000"></div>
+                  <span className="text-xs sm:text-sm text-gray-400 font-mono">INNOVATING</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="relative flex justify-center order-first lg:order-last"
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            {/* Holographic display frame */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 blur-xl rounded-full animate-pulse"></div>
+              
+              {/* Angler Fish visualization container */}
+              <div className="relative w-60 h-60 sm:w-72 sm:h-72 lg:w-80 lg:h-80 bg-gradient-to-br from-slate-800/50 to-purple-900/50 backdrop-blur-lg border-2 border-blue-400/50 rounded-full flex items-center justify-center shadow-[0_0_50px_rgba(96,165,250,0.4)]">
+                
+                {/* Animated rings */}
+                <div className="absolute inset-3 sm:inset-4 border-2 border-blue-400/30 rounded-full animate-spin"></div>
+                <div className="absolute inset-6 sm:inset-8 border-2 border-purple-400/30 rounded-full animate-spin animate-reverse"></div>
+                <div className="absolute inset-9 sm:inset-12 border-2 border-blue-500/30 rounded-full animate-spin"></div>
+                
+                {/* Angler Fish SVG */}
+                <div className="relative z-10 w-96 h-96 sm:w-120 sm:h-120 lg:w-144 lg:h-144 flex items-center justify-center">
+                  <Image
+                  src="/fish3.png"
+                  alt="anglerfish"
+                  width={2500}
+                  height={1000}
+                  className="relative flex justify-center order-first lg:order-last"
+                  />
+                </div>
+                
+                {/* Floating tech elements - repositioned to avoid fish */}
+                <div className="absolute top-6 right-12 sm:top-8 sm:right-16 w-3 h-3 sm:w-4 sm:h-4 bg-blue-400 rounded-full animate-bounce"></div>
+                <div className="absolute bottom-8 left-8 sm:bottom-12 sm:left-12 w-2 h-2 sm:w-3 sm:h-3 bg-purple-400 rounded-full animate-bounce delay-500"></div>
+                <div className="absolute top-12 left-6 sm:top-16 sm:left-8 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 rounded-full animate-bounce delay-1000"></div>
+                
+                {/* Data streams */}
+                <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent animate-pulse"></div>
+                <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-400 to-transparent animate-pulse delay-500 transform rotate-45"></div>
+              </div>
+              
+              {/* Hologram scan lines */}
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-400/10 to-transparent animate-pulse"></div>
+            </div>
+          </motion.div>
         </motion.div>
       </section>
-      {/*Scheldule section */}
-       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-black/20" />
+      
+      <section className="py-20 px-4">
+      <div className="max-w-6xl mx-auto text-center">
+        {/* Heading */}
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 mb-10"
+        >
+          Our Sponsors
+        </motion.h2>
+
+        {/* Sponsor grid container (blank for now) */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center justify-center bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-blue-400/20 shadow-[0_8px_32px_rgba(96,165,250,0.2)] min-h-[200px]"
+        >
+          {/* Add logos/components here */}
+          <div className="col-span-full text-gray-400 italic">
+            Sponsor logos coming soon...
+          </div>
+        </motion.div>
+      </div>
+    </section>
+      {/* FAQ Section */}
+      <section className="relative py-20 text-white">
+        <div className="absolute inset-0" />
         <motion.div
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative z-10 text-center text-white max-w-4xl mx-auto px-4"
+          viewport={{ once: true }}
+          className="relative z-10 max-w-5xl mx-auto px-6 text-center"
         >
-          Schedule
+          <h2 className="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+          <p className="text-lg text-gray-300 mb-12">
+            Got questions? We've got answers. Here's everything you need to know about Catalyst.
+          </p>
 
+          <div className="space-y-8 text-left">
+            {[
+              {
+                question: "What is Catalyst?",
+                answer:
+                  "Catalyst is a high-energy hardware hackathon where students come together to build, learn, and innovate on cutting-edge tech challenges."
+              },
+              {
+                question: "Who can participate?",
+                answer:
+                  "Catalyst is open to high school students of all skill levels. Whether you're a beginner or a seasoned hacker, you're welcome!"
+              },
+    
+              {
+                question: "Is there a fee to participate?",
+                answer:
+                  "Our price is TBD, depending on the donations from our generous sponsors, but it will be around $50-$100"
+              },
+              {
+                question: "What should I bring?",
+                answer:
+                  "Just bring your laptop, charger, any necessary personal items, and lots of curiosity. We provide hardware kits and tools!"
+              },
+              {
+                question: "How do I register?",
+                answer:
+                  "You can sign up through our official website. Registration opens soon—stay tuned!"
+              }
+            ].map(({ question, answer }, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white/10 p-6 rounded-2xl shadow-lg"
+              >
+                <h3 className="text-xl font-semibold mb-2">{question}</h3>
+                <p className="text-gray-300">{answer}</p>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </section>
-      {/*Sponsorship section */}
-       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-black/20" />
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative z-10 text-center text-white max-w-4xl mx-auto px-4"
-        >
-          Sponsor
-
-        </motion.div>
-      </section>
-      {/*FAQ section */}
-       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-black/20" />
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative z-10 text-center text-white max-w-4xl mx-auto px-4"
-        >
-          FAQ
-
-        </motion.div>
-      </section>
+      <div className="relative flex justify-end">
+        <Image
+          src="/fish2.png"
+          alt="anglerfish"
+          width={450}
+          height={200}
+          className="rounded-lg right-10 p-3 transition-transform duration-300"
+          />
+        </div>
+        <br></br>
     <footer className="bg-gray-800 text-white text-center p-4">
-        <p>All elements used on this page are under the Creative Commons license or our copyright.</p>
+        <p>All elements used on this page are owned by Redshifted.</p>
         <p>Made with love by the Redshifted Team ♥</p>
       </footer>
     </main>

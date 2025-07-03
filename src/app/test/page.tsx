@@ -1,62 +1,59 @@
 'use client'
+import { motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
 
-import Image from 'next/image';
-
-const Template = () => {
+export default function Landing() {
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      {/* First Div: Centered on Desktop, Sticky on Mobile */}
-      <div className="w-full max-w-4xl mx-auto mb-8 lg:sticky lg:top-0 lg:text-center lg:mb-0">
-        <div className="bg-white p-6 shadow-lg rounded-md">
-          <h2 className="text-2xl font-semibold">Centered Element (Sticky on Mobile)</h2>
-          <p className="mt-4 text-gray-600">
-            This div is centered on desktop but becomes sticky on mobile screens. It will stick to the top of the screen while you scroll down.
-          </p>
-        </div>
+    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
+      {/* Background circuit pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(90deg,transparent_24%,rgba(96,165,250,0.03)_25%,rgba(96,165,250,0.03)_26%,transparent_27%,transparent_74%,rgba(147,51,234,0.03)_75%,rgba(147,51,234,0.03)_76%,transparent_77%),linear-gradient(rgba(96,165,250,0.03)_50%,transparent_50%)] bg-[size:50px_50px]" />
       </div>
 
-      {/* Second Div: Box on Left and Image on Right (Desktop), Under Text (Mobile) */}
-      <div className="w-full max-w-4xl mx-auto flex flex-col lg:flex-row items-center mb-8">
-        {/* Box */}
-        <div className="bg-blue-500 w-full lg:w-1/3 p-6 text-white rounded-md mb-4 lg:mb-0">
-          <h3 className="text-xl font-semibold">Left Box (Desktop) / Under Text (Mobile)</h3>
-          <p className="mt-4">
-            On desktop, this box will appear on the left of the text and image. On mobile, it will be placed under the text.
-          </p>
-        </div>
+      {/* Glowing orbs */}
+      <div className="absolute top-10 left-10 w-20 h-20 bg-blue-400/20 rounded-full blur-xl animate-pulse" />
+      <div className="absolute bottom-10 right-10 w-24 h-24 bg-purple-600/20 rounded-full blur-xl animate-pulse [animation-delay:1s]" />
 
-        {/* Image Box: Leaning to the Right on Desktop */}
-        <div className="box-border m-0 min-w-0 max-w-full h-auto">
-            <Image
-              src="/meteor.png" // Change this path to an actual image
-              alt="TBD Image"
-              width={800}
-              height={500}
-              layout="responsive"
-              className="rounded-md"
-            />
-        </div>
-      </div>
-    </div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/30" />
+
+      {/* Centered content box */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="relative z-10 max-w-2xl text-center bg-gradient-to-br from-slate-800/80 to-purple-900/80 backdrop-blur-lg border border-blue-400/30 rounded-2xl px-6 py-10 shadow-[0_8px_32px_rgba(96,165,250,0.3)]"
+      >
+        {/* Circuit corners */}
+        <div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-blue-400" />
+        <div className="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 border-blue-400" />
+        <div className="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 border-blue-400" />
+        <div className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-blue-400" />
+
+        {/* Title */}
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-4">
+          Catalyst
+        </h1>
+
+        {/* Typing effect */}
+        <TypeAnimation
+          sequence={[
+            "Ottawa's first hardware hackathon", // Text
+            2000,                                 // Wait 2s
+            "",                                   // Clear text
+            500,
+            "Where hardware meets imagination",   // Optional: second line
+            2000,
+            "", 500,
+            "Join the revolution.",               // Optional third message
+            2000
+          ]}
+          wrapper="p"
+          cursor={true}
+          repeat={Infinity}
+          className="text-base sm:text-lg lg:text-xl text-gray-300 font-mono leading-relaxed"
+        />
+      </motion.div>
+    </section>
   );
-};
-
-export default Template;
-
-
-
-
-{/*
-export default function Home() {
-    return (
-        <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-            <section className="relative h-screen flex items-center justify-center overflow-hidden">
-                <h1>Elements testing page for Catalyst.</h1>
-            </section>
-        </main>
-    )
 }
-
-*/
-}
-
