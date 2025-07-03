@@ -32,7 +32,7 @@ export default function Home() {
             <div className="flex flex-wrap justify-center gap-6 mb-8">
               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
                 <Calendar className="w-5 h-5" />
-                <span>August XX, 2025</span>
+                <span>November XX, 2025</span>
               </div>
               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
                 <MapPin className="w-5 h-5" />
@@ -113,7 +113,7 @@ export default function Home() {
         >
           <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white">
             <Calendar className="w-5 h-5" />
-            <span>August XX 2025</span>
+            <span>November XX 2025</span>
           </div>
           <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-white">
             <MapPin className="w-5 h-5" />
@@ -311,7 +311,7 @@ export default function Home() {
         >
           <h2 className="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
           <p className="text-lg text-gray-300 mb-12">
-            Got questions? We've got answers. Here's everything you need to know about Catalyst.
+            <span>Got questions? We&aops;ve got answers. Here&aops;s everything you need to know about Catalyst.</span>
           </p>
 
           <div className="space-y-8 text-left">
