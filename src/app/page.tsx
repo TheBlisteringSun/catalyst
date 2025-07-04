@@ -6,25 +6,24 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image';
 import { TypeAnimation } from "react-type-animation";
 
-
+// Tracks and remembers whether an element has appeared on the screen
 export default function Home() {
   const [mounted, setMounted] = useState(false)
 
+// As soon as this page shows up, sets mounted to true
   useEffect(() => {
     setMounted(true)
   }, [])
 
+  // Shows a loading screen while page is not mounted otherwise, the actual page is displayed
   if (!mounted) {
     return (
-      <main className="min-h-screen from-slate-900 via-purple-900 to-slate-900">
+      <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
         <section className="relative h-screen flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0" />
-          
           <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
             <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Loading...
             </h1>
-            
             <p className="text-xl md:text-2xl mb-8 text-gray-300">
               Build the future with hardware and code
             </p>
@@ -33,13 +32,13 @@ export default function Home() {
       </main>
     )
   }
-
+  else {
     return (
     <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
 
       {/* Hero Section */}
-
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        
         {/* Enhanced Background with animated gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900/30 to-purple-900 animate-pulse" />
         
@@ -70,7 +69,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
-          className="relative z-10 w-full max-w-7xl mx-auto text-center px-8"
+          className="relative z-10 w-full max-w-7xl mx-auto text-center px-8 flex flex-col items-center justify-center min-h-screen"
         >
           {/* Title */}
           <motion.h1 
@@ -90,45 +89,20 @@ export default function Home() {
             className="h-2 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-full mx-auto mb-8 max-w-2xl shadow-[0_0_20px_rgba(96,165,250,0.8)]"
           />
 
-          {/* Presented by and Logo */}
+          {/* Presented by and Logo - Now inline */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.5 }}
-            className="flex flex-col items-center mb-12"
+            className="flex items-center justify-center gap-4 mb-16"
           >
-            <p className="text-lg text-gray-300 mb-4 font-light tracking-wide">presented by</p>
+            <p className="text-base text-gray-400 font-light tracking-wide">presented by</p>
             <Image 
               src="/logo_red.png" 
               alt="Redshifted" 
-              width={400}
-              height={100}
-              className="opacity-90 filter drop-shadow-lg"
-            />
-          </motion.div>
-
-          {/* Typing animation */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 2 }}
-            className="mb-14"
-          >
-            <TypeAnimation
-              sequence={[
-                "Ottawa's first hardware hackathon",
-                3000,
-                "Where hardware meets imagination",
-                3000,
-                "Build the impossible. Code the future.",
-                3000,
-                "Join the revolution.",
-                3000,
-              ]}
-              wrapper="p"
-              cursor={true}
-              repeat={Infinity}
-              className="text-xl sm:text-2xl lg:text-3xl text-gray-200 font-mono leading-relaxed font-light tracking-wide drop-shadow-lg"
+              width={250}
+              height={62}
+              className="opacity-80 filter drop-shadow-lg"
             />
           </motion.div>
 
@@ -168,12 +142,12 @@ export default function Home() {
               
               {/* Animated particles on hover */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute -top-2 -left-2 w-1 h-1 bg-yellow-400 rounded-full animate-ping" />
-                <div className="absolute -top-1 -right-1 w-1 h-1 bg-orange-400 rounded-full animate-ping [animation-delay:0.2s]" />
-                <div className="absolute -bottom-2 -left-1 w-1 h-1 bg-red-400 rounded-full animate-ping [animation-delay:0.4s]" />
-                <div className="absolute -bottom-1 -right-2 w-1 h-1 bg-yellow-400 rounded-full animate-ping [animation-delay:0.6s]" />
-                <div className="absolute top-1/2 -left-3 w-1 h-1 bg-orange-400 rounded-full animate-ping [animation-delay:0.8s]" />
-                <div className="absolute top-1/2 -right-3 w-1 h-1 bg-red-400 rounded-full animate-ping [animation-delay:1s]" />
+                <div className="absolute -top-2 -left-2 w-1 h-1 bg-red-400 rounded-full animate-ping" />
+                <div className="absolute -top-1 -right-1 w-1 h-1 bg-red-500 rounded-full animate-ping [animation-delay:0.2s]" />
+                <div className="absolute -bottom-2 -left-1 w-1 h-1 bg-pink-400 rounded-full animate-ping [animation-delay:0.4s]" />
+                <div className="absolute -bottom-1 -right-2 w-1 h-1 bg-red-400 rounded-full animate-ping [animation-delay:0.6s]" />
+                <div className="absolute top-1/2 -left-3 w-1 h-1 bg-red-500 rounded-full animate-ping [animation-delay:0.8s]" />
+                <div className="absolute top-1/2 -right-3 w-1 h-1 bg-pink-400 rounded-full animate-ping [animation-delay:1s]" />
               </div>
               
               {/* Main button */}
@@ -182,7 +156,7 @@ export default function Home() {
                 href="https://forms.gle/b2n71kTgUs7ddHD98"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative inline-block bg-gradient-to-r from-blue-500 to-purple-600 hover:from-red-500 hover:via-orange-500 hover:to-yellow-500 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform shadow-[0_4px_20px_rgba(59,130,246,0.6)] hover:shadow-[0_8px_40px_rgba(249,115,22,0.8)] border-2 border-blue-400/50 hover:border-orange-400/80"
+                className="relative inline-block bg-gradient-to-r from-blue-500 to-purple-600 hover:from-red-500 hover:via-red-600 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 transform shadow-[0_4px_20px_rgba(59,130,246,0.6)] hover:shadow-[0_8px_40px_rgba(239,68,68,0.8)] border-2 border-blue-400/50 hover:border-red-400/80"
               >
                 <span className="relative z-10">REGISTER NOW</span>
               </a>
@@ -204,7 +178,7 @@ export default function Home() {
       </section>
 
       {/*About Us*/}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden from-slate-900 via-purple-900 to-slate-900">
+      <section className="py-20 px-4">
         {/* Animated circuit pattern background */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(90deg,transparent_24%,rgba(96,165,250,0.03)_25%,rgba(96,165,250,0.03)_26%,transparent_27%,transparent_74%,rgba(147,51,234,0.03)_75%,rgba(147,51,234,0.03)_76%,transparent_77%),linear-gradient(rgba(96,165,250,0.03)_50%,transparent_50%)] bg-[size:50px_50px]"></div>
@@ -213,8 +187,6 @@ export default function Home() {
         {/* Glowing orbs */}
         <div className="absolute top-10 left-4 sm:top-20 sm:left-20 w-16 h-16 sm:w-32 sm:h-32 bg-blue-400/20 rounded-full blur-xl animate-pulse"></div>
         <div className="absolute bottom-10 right-4 sm:bottom-20 sm:right-20 w-20 h-20 sm:w-40 sm:h-40 bg-purple-600/20 rounded-full blur-xl animate-pulse delay-1000"></div>
-        
-        <div className="absolute inset-0" />
         
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -245,7 +217,7 @@ export default function Home() {
               <div className="relative">
                 <div className="absolute -left-2 top-0 w-1 h-full bg-blue-400 animate-pulse"></div>
                 <p className="text-md md:text-base lg:text-lg xl:text-xl text-gray-300 leading-relaxed pl-4 font-mono">
-                  <span className="text-purple-400">&gt;</span> <span className="text-white">Catalyst</span> is Ottawa’s first high-school hardware hackathon, a 24‑hour innovation sprint where teams go from idea to working prototype under tight timelines. Unlike traditional software hackathons, Catalyst empowers students to design, build, and test physical hardware from circuits and sensors to mechanical systems with expert mentorship and hands-on support.
+                  <span className="text-purple-400">&gt;</span> <span className="text-white">Catalyst</span> is Ottawa's first high-school hardware hackathon, a 24‑hour innovation sprint where teams go from idea to working prototype under tight timelines. Unlike traditional software hackathons, Catalyst empowers students to design, build, and test physical hardware from circuits and sensors to mechanical systems with expert mentorship and hands-on support.
                 </p>
               </div>
               
@@ -299,7 +271,7 @@ export default function Home() {
                 {/* Floating tech elements - repositioned to avoid fish */}
                 <div className="absolute top-6 right-12 sm:top-8 sm:right-16 w-3 h-3 sm:w-4 sm:h-4 bg-blue-400 rounded-full animate-bounce"></div>
                 <div className="absolute bottom-8 left-8 sm:bottom-12 sm:left-12 w-2 h-2 sm:w-3 sm:h-3 bg-purple-400 rounded-full animate-bounce delay-500"></div>
-                <div className="absolute top-12 left-6 sm:top-16 sm:left-8 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 rounded-full animate-bounce delay-1000"></div>
+                <div className="absolute top-12 left-6 sm:top-16 sm:left-8 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 rounded-full animate-bounce animate-pulse [animation-delay:1s]"></div>
                 
                 {/* Data streams */}
                 <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent animate-pulse"></div>
@@ -313,34 +285,50 @@ export default function Home() {
         </motion.div>
       </section>
       
+      {/*Sponsor Section*/}
       <section className="py-20 px-4">
-      <div className="max-w-6xl mx-auto text-center">
-        {/* Heading */}
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 mb-10"
-        >
-          Our Sponsors
-        </motion.h2>
+        <div className="max-w-6xl mx-auto text-center">
+          {/* Heading with consistent styling */}
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-10"
+          >
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400">
+              Our Sponsors
+            </span>
+          </motion.h2>
 
-        {/* Sponsor grid container (blank for now) */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center justify-center bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-blue-400/20 shadow-[0_8px_32px_rgba(96,165,250,0.2)] min-h-[200px]"
-        >
-          {/* Add logos/components here */}
-          <div className="col-span-full text-gray-400 italic">
-            Contact andy.han2027@gmail.com for sponsoring this event.
-          </div>
-        </motion.div>
-      </div>
-    </section>
+          {/* Sponsor grid container with filler text */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center justify-center bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-blue-400/20 shadow-[0_8px_32px_rgba(96,165,250,0.2)] min-h-[200px]"
+          >
+            {/* Filler sponsor placeholders */}
+            <div className="text-gray-400 italic border-2 border-dashed border-gray-400/50 rounded-lg p-4 text-center">
+              Your Logo Here
+            </div>
+            <div className="text-gray-400 italic border-2 border-dashed border-gray-400/50 rounded-lg p-4 text-center">
+              Your Logo Here
+            </div>
+            <div className="text-gray-400 italic border-2 border-dashed border-gray-400/50 rounded-lg p-4 text-center">
+              Your Logo Here
+            </div>
+            <div className="text-gray-400 italic border-2 border-dashed border-gray-400/50 rounded-lg p-4 text-center">
+              Your Logo Here
+            </div>
+            <div className="col-span-full text-gray-400 italic mt-4 text-sm">
+              Contact andy.han2027@gmail.com for sponsoring this event.
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="relative py-20 text-white">
         <div className="absolute inset-0" />
@@ -351,7 +339,11 @@ export default function Home() {
           viewport={{ once: true }}
           className="relative z-10 max-w-5xl mx-auto px-6 text-center"
         >
-          <h2 className="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400">
+              Frequently Asked Questions
+            </span>
+          </h2>
           <p className="text-lg text-gray-300 mb-12">
             <span>Got questions? We&apos;ve got answers. Here&apos;s everything you need to know about Catalyst.</span>
           </p>
@@ -400,6 +392,8 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
+
+      {/* Angler Fish Picture at bottom */}
       <div className="relative flex justify-end">
         <Image
           src="/fish2.png"
@@ -407,14 +401,16 @@ export default function Home() {
           width={450}
           height={200}
           className="rounded-lg right-10 p-3 transition-transform duration-300"
-          />
-        </div>
-        <br></br>
-    <footer className="bg-gray-800 text-white text-center p-4">
-        <p>All elements used on this page are owned by Redshifted.</p>
-        <p>Made with love by the Redshifted Team ♥</p>
+        />
+      </div>
+      
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white text-center p-4">
+          <p>All elements used on this page are owned by Redshifted.</p>
+          <p>Made with love by the Redshifted Team ♥</p>
       </footer>
     </main>
-    
-  )
+    )
+  }
+
 }
