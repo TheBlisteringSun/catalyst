@@ -4,8 +4,8 @@ import { motion } from 'framer-motion'
 import { Calendar, MapPin, Users } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import Image from 'next/image';
-{//import { TypeAnimation } from "react-type-animation";
-}
+//import { TypeAnimation } from "react-type-animation";
+
 // Tracks and remembers whether an element has appeared on the screen
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -566,6 +566,7 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
+
 
       {/* Angler Fish Picture at bottom */}
       <div className="relative flex justify-end">
