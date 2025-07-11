@@ -4,8 +4,8 @@ import { motion } from 'framer-motion'
 import { Calendar, MapPin, Users } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import Image from 'next/image';
-import { TypeAnimation } from "react-type-animation";
-
+{//import { TypeAnimation } from "react-type-animation";
+}
 // Tracks and remembers whether an element has appeared on the screen
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -89,7 +89,7 @@ export default function Home() {
             className="h-2 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-full mx-auto mb-8 max-w-2xl shadow-[0_0_20px_rgba(96,165,250,0.8)]"
           />
 
-          {/* Presented by and Logo - Now inline */}
+          {/*    by and Logo - Now inline */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -176,6 +176,179 @@ export default function Home() {
         </motion.div>
       
       </section>
+      
+      {/*What is a hackathon*/}
+      <section className="py-20 px-4">
+        {/* Animated circuit pattern background */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(90deg,transparent_24%,rgba(96,165,250,0.03)_25%,rgba(96,165,250,0.03)_26%,transparent_27%,transparent_74%,rgba(147,51,234,0.03)_75%,rgba(147,51,234,0.03)_76%,transparent_77%),linear-gradient(rgba(96,165,250,0.03)_50%,transparent_50%)] bg-[size:50px_50px]"></div>
+        </div>
+        
+        {/* Glowing orbs */}
+        <div className="absolute top-10 left-4 sm:top-20 sm:left-20 w-16 h-16 sm:w-32 sm:h-32 bg-blue-400/20 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-10 right-4 sm:bottom-20 sm:right-20 w-20 h-20 sm:w-40 sm:h-40 bg-purple-600/20 rounded-full blur-xl animate-pulse delay-1000"></div>
+        
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="w-full max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center px-4 sm:px-6 lg:px-8"
+        >
+          <motion.div
+            className="relative flex justify-center order-first"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            {/* Holographic display frame */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 blur-xl rounded-full animate-pulse"></div>
+                
+                {/* Animated rings */}
+                <div className="absolute inset-3 sm:inset-4 border-2 border-blue-400/30 rounded-full animate-spin"></div>
+                <div className="absolute inset-6 sm:inset-8 border-2 border-purple-400/30 rounded-full animate-spin animate-reverse"></div>
+                <div className="absolute inset-9 sm:inset-12 border-2 border-blue-500/30 rounded-full animate-spin"></div>
+                
+                {/* Angler Fish Image*/}
+                <div className="relative z-10 w-96 h-96 sm:w-120 sm:h-120 lg:w-144 lg:h-144 flex items-center justify-center">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/eoovOvF7nKM?si=SxSqXOfrA7FO4rop" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin"></iframe>
+                </div>
+                
+                {/* Floating tech elements - repositioned to avoid fish */}
+                <div className="absolute top-6 right-12 sm:top-8 sm:right-16 w-3 h-3 sm:w-4 sm:h-4 bg-blue-400 rounded-full animate-bounce"></div>
+                <div className="absolute bottom-8 left-8 sm:bottom-12 sm:left-12 w-2 h-2 sm:w-3 sm:h-3 bg-purple-400 rounded-full animate-bounce delay-500"></div>
+                <div className="absolute top-12 left-6 sm:top-16 sm:left-8 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 rounded-full animate-bounce animate-pulse [animation-delay:1s]"></div>
+                
+                {/* Data streams */}
+                <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent animate-pulse"></div>
+                <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-400 to-transparent animate-pulse delay-500 transform rotate-45"></div>
+              </div>
+              
+              {/* Hologram scan lines */}
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-400/10 to-transparent animate-pulse"></div>
+          </motion.div>
+
+          <motion.div
+            className="relative bg-gradient-to-br from-slate-800/80 to-purple-900/80 backdrop-blur-lg border border-blue-400/30 rounded-xl lg:rounded-2xl p-4 sm:p-6 lg:p-8 shadow-[0_8px_32px_rgba(96,165,250,0.3)]"
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            {/* Circuit corner decorations */}
+            <div className="absolute top-2 left-2 sm:top-4 sm:left-4 w-4 h-4 sm:w-6 sm:h-6 border-l-2 border-t-2 border-blue-400"></div>
+            <div className="absolute top-2 right-2 sm:top-4 sm:right-4 w-4 h-4 sm:w-6 sm:h-6 border-r-2 border-t-2 border-blue-400"></div>
+            <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 w-4 h-4 sm:w-6 sm:h-6 border-l-2 border-b-2 border-blue-400"></div>
+            <div className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 w-4 h-4 sm:w-6 sm:h-6 border-r-2 border-b-2 border-blue-400"></div>
+            
+            <div className="space-y-4 sm:space-y-6">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 sm:mb-6">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400">
+                  What is a hackathon?
+                </span>
+              </h2>
+              
+              {/* Typing animation effect */}
+              <div className="relative">
+                <div className="absolute -left-2 top-0 w-1 h-full bg-blue-400 animate-pulse"></div>
+                <p className="text-md md:text-base lg:text-lg xl:text-xl text-gray-300 leading-relaxed pl-4 font-mono">
+                  <span className="text-purple-400">&gt;</span> A <span className="text-white">Hackathon</span> is a social coding marathon where teenagers come together to build projects for a weekend and share them with the world. A hackathon is a space that helps give makers everything they need to start building–mentors, collaborators, inspiration, and a goal to work towards. Hackers will leave a hackathon with a project of their own, ready and excited to keep hacking once they get home.
+                </p>
+              </div>
+              
+              {/* Status indicators */}
+              <div className="flex flex-wrap gap-3 sm:gap-4 mt-4 sm:mt-6">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 bg-blue-400 rounded-full animate-pulse"></div>
+                  <span className="text-xs sm:text-sm text-gray-400 font-mono">ONLINE</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 bg-purple-400 rounded-full animate-pulse delay-500"></div>
+                  <span className="text-xs sm:text-sm text-gray-400 font-mono">READY</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 sm:w-3 sm:h-3 bg-blue-500 rounded-full animate-pulse delay-1000"></div>
+                  <span className="text-xs sm:text-sm text-gray-400 font-mono">INNOVATING</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      </section>
+      
+      {/*Sponsor Section*/}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto text-center">
+          {/* Heading with consistent styling */}
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-10"
+          >
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400">
+              Examples of Hackathons
+            </span>
+          </motion.h2>
+
+          {/* Sponsor grid container with filler text */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center justify-center bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-blue-400/20 shadow-[0_8px_32px_rgba(96,165,250,0.2)] min-h-[200px]"
+          >
+            {/* Filler sponsor placeholders */}
+            <div className="text-gray-400 italic border-2 border-dashed border-gray-400/50 rounded-lg p-4 text-center">
+            <a href="https://hackthenorth.com">
+              <img
+                  src="https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/002/562/719/datas/original.png"
+                  alt="MLH"
+                  width={1500}
+                  height={1000}
+                  className="relative flex justify-center order-first lg:order-last"
+                  />
+              </a>
+              Hack the North, one of the biggest hackathons in Canada.
+            </div>
+            <div className="text-gray-400 italic border-2 border-dashed border-gray-400/50 rounded-lg p-4 text-center">
+              <a href="https://scrapyard.hackclub.com">
+              <img
+                  src="https://scrapyard.hackclub.com/elements/wordmark.svg" 
+                  alt="Scrapyard" 
+                  width={1500}
+                  height={1000}
+                  className="relative flex justify-center order-first lg:order-last"
+                />
+                  </a>
+              Scrapyard, one of the more recent hackathons that happened in Ottawa.
+            </div>
+            <div className="text-gray-400 italic border-2 border-dashed border-gray-400/50 rounded-lg p-4 text-center">
+              <a href="https://counterspell.hackclub.com">
+              <img
+                  src="https://counterspell.hackclub.com/favicon.ico" 
+                  alt="counterspell" 
+                  width={500}
+                  height={500}
+                  className="relative flex justify-center order-first md:order-last"/>
+              </a>
+              Counterspell, another one of the more recent hackathons that happened in Ottawa.
+            </div>
+            <div className="text-gray-400 italic border-2 border-dashed border-gray-400/50 rounded-lg p-4 text-center">
+              <a href="https://lockdown.youthhacks.ca">
+              <img
+                  src="https://lockdown.youthhacks.ca/herologo.png" 
+                  alt="lockdown" 
+                  width={500}
+                  height={500}
+                  className="relative flex justify-center order-first md:order-last"/>
+              </a>
+              Lockdown, another recent hackathon that happened in Ottawa.
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       {/*About Us*/}
       <section className="py-20 px-4">
@@ -217,7 +390,7 @@ export default function Home() {
               <div className="relative">
                 <div className="absolute -left-2 top-0 w-1 h-full bg-blue-400 animate-pulse"></div>
                 <p className="text-md md:text-base lg:text-lg xl:text-xl text-gray-300 leading-relaxed pl-4 font-mono">
-                  <span className="text-purple-400">&gt;</span> <span className="text-white">Catalyst</span> is Ottawa's first high-school hardware hackathon, a 24‑hour innovation sprint where teams go from idea to working prototype under tight timelines. Unlike traditional software hackathons, Catalyst empowers students to design, build, and test physical hardware from circuits and sensors to mechanical systems with expert mentorship and hands-on support.
+                  <span className="text-purple-400">&gt;</span> <span className="text-white">Catalyst</span> is Ottawa&apos;s first high-school hardware hackathon, a 24‑hour innovation sprint where teams go from idea to working prototype under tight timelines. Unlike traditional software hackathons, Catalyst empowers students to design, build, and test physical hardware from circuits and sensors to mechanical systems with expert mentorship and hands-on support.
                 </p>
               </div>
               
@@ -284,7 +457,8 @@ export default function Home() {
           </motion.div>
         </motion.div>
       </section>
-      
+
+
       {/*Sponsor Section*/}
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
