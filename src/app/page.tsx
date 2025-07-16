@@ -581,7 +581,7 @@ export default function Home() {
       
       {/* Footer */}
       <footer className="bg-gray-800 text-white text-center p-4">
-          <p>All elements used on this page are owned by Redshifted.</p>
+          <p>All elements used on this page are owned by Redshifted. Logos are property of their respective owners.</p>
           <p>Made with love by the Redshifted Team ♥</p>
       </footer>
     </main>
