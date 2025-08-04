@@ -4,7 +4,9 @@ import { motion } from 'framer-motion'
 import { Calendar, MapPin, Users } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import Image from 'next/image';
+import PromoBanner from './components/promo';
 //import { TypeAnimation } from "react-type-animation";
+
 
 // Tracks and remembers whether an element has appeared on the screen
 export default function Home() {
@@ -35,7 +37,7 @@ export default function Home() {
   else {
     return (
     <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-
+      <PromoBanner/>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         
@@ -65,6 +67,7 @@ export default function Home() {
         <div className="absolute bottom-8 right-8 w-20 h-20 border-b-4 border-r-4 border-violet-400/40 rounded-br-lg" />
 
         {/* Full-screen content */}
+        
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -578,7 +581,6 @@ export default function Home() {
           className="rounded-lg right-10 p-3 transition-transform duration-300"
         />
       </div>
-      
       {/* Footer */}
       <footer className="bg-gray-800 text-white text-center p-4">
           <p>All elements used on this page are owned by Redshifted. Logos are property of their respective owners.</p>
