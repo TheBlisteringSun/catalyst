@@ -488,7 +488,14 @@ export default function Home() {
           >
             {/* Filler sponsor placeholders */}
             <div className="text-gray-400 italic border-2 border-dashed border-gray-400/50 rounded-lg p-4 text-center">
-              Your Logo Here
+              <a href="https://gen.xyz">
+              <img
+                  src="xyz-logo-white.png" 
+                  alt="xyz domain logo" 
+                  width={500}
+                  height={500}
+                  className="relative flex justify-center order-first md:order-last"/>
+              </a>
             </div>
             <div className="text-gray-400 italic border-2 border-dashed border-gray-400/50 rounded-lg p-4 text-center">
               Your Logo Here
