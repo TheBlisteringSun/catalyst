@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { Calendar, MapPin, Users } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import Image from 'next/image';
-import PromoBanner from './components/promo';
+import PromoBanner from './components/jukebox';
 //import { TypeAnimation } from "react-type-animation";
 
 

@@ -25,6 +25,7 @@ const config: Config = {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-up': 'slideUp 0.5s ease-out',
         'bounce-slow': 'bounce 2s infinite',
+        'gradient-x': 'gradient-x 3s ease infinite', // New rainbow animation
       },
       keyframes: {
         fadeIn: {
@@ -35,6 +36,17 @@ const config: Config = {
           '0%': { transform: 'translateY(100px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
+        // New rainbow gradient animation
+        'gradient-x': {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center'
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center'
+          }
+        }
       },
     },
   },
