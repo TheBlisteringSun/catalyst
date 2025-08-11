@@ -1,7 +1,7 @@
 'use client'; // This directive is necessary for client-side components in frameworks like Next.js
 
 import React, { useState, useEffect, useRef } from 'react';
-import { X, ArrowRight, Sparkles } from 'lucide-react';
+import {Sparkles } from 'lucide-react';
 
 // Define the type for a single confetti particle.
 interface Particle {
@@ -117,15 +117,10 @@ interface PromoBannerProps {
 }
 
 const PromoBanner: React.FC<PromoBannerProps> = ({ 
-  message = "Thanks to Jukebox for the COOLEST custom stickers",
-  ctaText = "Visit",
-  ctaLink = "https://www.jukeboxprint.com/custom-stickers",
   backgroundColor = "bg-gradient-to-r from-purple-600 to-blue-600",
-  onClose,
   showIcon = true,
-  showCTA = true
 }) => {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible] = useState(true);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isConfettiActive, setIsConfettiActive] = useState(false);
 
@@ -143,11 +138,6 @@ const PromoBanner: React.FC<PromoBannerProps> = ({
       return () => window.removeEventListener('load', handleLoad);
     }
   }, []);
-
-  const handleClose = () => {
-    setIsVisible(false);
-    if (onClose) onClose();
-  };
 
   if (!isVisible || !isLoaded) return null;
 
