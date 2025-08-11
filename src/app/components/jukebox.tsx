@@ -158,12 +158,17 @@ const PromoBanner: React.FC<PromoBannerProps> = ({
             {showIcon && (
               <Sparkles className="w-5 h-5 mr-3 animate-spin" style={{ animationDuration: '3s' }} />
             )}
-          <p className="text-sm font-medium sm:text-base">
+            {/* 
+            <p className="text-sm font-medium sm:text-base">
             Thanks to Jukebox for the <span 
               className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-yellow-500 to-purple-500 bg-[length:200%_auto] animate-gredient-x"
               onMouseEnter={() => setIsConfettiActive(true)}
               onMouseLeave={() => setIsConfettiActive(false)}
             >COOLEST</span> <a href="https://www.jukeboxprint.com/custom-stickers" className="text-primary-500 hover:text-primary-600 transition-colors duration-200 underline">custom stickers</a>
+          </p>
+          */}
+          <p className="text-sm font-medium sm:text-base">
+            Thanks to Jukebox for the COOLEST <a href="https://www.jukeboxprint.com/custom-stickers" className="text-primary-500 hover:text-primary-600 transition-colors duration-200 underline">custom stickers</a>
           </p>
           </div>
         </div>
