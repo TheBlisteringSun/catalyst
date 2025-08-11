@@ -122,7 +122,8 @@ const PromoBanner: React.FC<PromoBannerProps> = ({
 }) => {
   const [isVisible] = useState(true);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isConfettiActive, setIsConfettiActive] = useState(false);
+  //const [isConfettiActive, setIsConfettiActive] = useState(false);
+  const [isConfettiActive] = useState(false);
 
   useEffect(() => {
     const handleLoad = () => {
