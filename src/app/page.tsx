@@ -507,7 +507,7 @@ export default function Home() {
               Your Logo Here
             </div>
             <div className="col-span-full text-gray-400 italic mt-4 text-sm">
-              Contact andy.han2027@gmail.com for sponsoring this event.
+              Contact andy.han@redshifted.ca for sponsoring this event.
             </div>
           </motion.div>
         </div>
