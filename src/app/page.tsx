@@ -306,7 +306,7 @@ export default function Home() {
             <div className="text-gray-400 italic border-2 border-dashed border-gray-400/50 rounded-lg p-4 text-center">
             <a href="https://hackthenorth.com">
               <img
-                  src="https://d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/002/562/719/datas/original.png"
+                  src="/mlh.png"
                   alt="MLH"
                   width={1500}
                   height={1000}
@@ -317,12 +317,13 @@ export default function Home() {
             </div>
             <div className="text-gray-400 italic border-2 border-dashed border-gray-400/50 rounded-lg p-4 text-center">
               <a href="https://scrapyard.hackclub.com">
-              <img
+              <Image
                   src="https://scrapyard.hackclub.com/elements/wordmark.svg" 
                   alt="Scrapyard" 
                   width={1500}
                   height={1000}
                   className="relative flex justify-center order-first lg:order-last"
+                  priority={true}
                 />
                   </a>
               Scrapyard, one of the more recent hackathons that happened in Ottawa.
@@ -478,38 +479,85 @@ export default function Home() {
             </span>
           </motion.h2>
 
-          {/* Sponsor grid container with filler text */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center justify-center bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-blue-400/20 shadow-[0_8px_32px_rgba(96,165,250,0.2)] min-h-[200px]"
-          >
-            {/* Filler sponsor placeholders */}
-            <div className="text-gray-400 italic border-2 border-dashed border-gray-400/50 rounded-lg p-4 text-center">
-              <a href="https://gen.xyz">
-              <img
-                  src="xyz-logo-white.png" 
-                  alt="xyz domain logo" 
-                  width={500}
-                  height={500}
-                  className="relative flex justify-center order-first md:order-last"/>
+          {/* Gold Sponsors */}
+          <div className="mb-12">
+            <h3 className="text-xl sm:text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
+              GOLD SPONSORS
+            </h3>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              viewport={{ once: true }}
+              className="flex justify-center items-center"
+            >
+              <a 
+                href="https://yriscience.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block w-full max-w-xl transform hover:scale-105 transition-transform duration-300"
+              >
+                <div className="bg-gradient-to-r from-yellow-400/20 to-yellow-600/20 p-8 rounded-2xl border-2 border-yellow-400/30 shadow-[0_0_30px_rgba(250,204,21,0.3)] backdrop-blur-lg">
+                  <Image 
+                    src="/YRI-logo-white.png"
+                    alt="YRI Science"
+                    width={600}
+                    height={200}
+                    className="w-full h-auto filter brightness-100 contrast-125"
+                  />
+                </div>
               </a>
-            </div>
-            <div className="text-gray-400 italic border-2 border-dashed border-gray-400/50 rounded-lg p-4 text-center">
-              Your Logo Here
-            </div>
-            <div className="text-gray-400 italic border-2 border-dashed border-gray-400/50 rounded-lg p-4 text-center">
-              Your Logo Here
-            </div>
-            <div className="text-gray-400 italic border-2 border-dashed border-gray-400/50 rounded-lg p-4 text-center">
-              Your Logo Here
-            </div>
-            <div className="col-span-full text-gray-400 italic mt-4 text-sm">
-              Contact andy.han@redshifted.ca for sponsoring this event.
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
+
+          {/* Community Partners */}
+          <div className="mb-8">
+            <h3 className="text-xl sm:text-2xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+              COMMUNITY PARTNERS
+            </h3>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center justify-center bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-blue-400/20 shadow-[0_8px_32px_rgba(96,165,250,0.2)] min-h-[200px]"
+            >
+              <div className="text-gray-400 border-2 border-gray-400/50 rounded-lg p-4 text-center hover:border-blue-400/50 transition-colors duration-300">
+                <a href="https://gen.xyz" target="_blank" rel="noopener noreferrer">
+                  <Image
+                    src="/xyz-logo-white.png" 
+                    alt="xyz domain logo" 
+                    width={500}
+                    height={500}
+                    className="relative flex justify-center order-first md:order-last"
+                    priority={true}
+                  />
+                </a>
+              </div>
+              <div className="text-gray-400 border-2 border-gray-400/50 rounded-lg p-4 text-center hover:border-blue-400/50 transition-colors duration-300">
+                <a href="http://jukebox.com/" target="_blank" rel="noopener noreferrer">
+                  <Image
+                    src="/jukebox-logo.svg" 
+                    alt="Jukebox" 
+                    width={500}
+                    height={500}
+                    className="relative flex justify-center order-first md:order-last"
+                    priority={true}
+                  />
+                </a>
+              </div>
+              <div className="text-gray-400 italic border-2 border-dashed border-gray-400/50 rounded-lg p-4 text-center">
+                Your Logo Here
+              </div>
+              <div className="text-gray-400 italic border-2 border-dashed border-gray-400/50 rounded-lg p-4 text-center">
+                Your Logo Here
+              </div>
+            </motion.div>
+          </div>
+          
+          <div className="text-gray-400 italic mt-4 text-sm">
+            Contact andy.han@redshifted.ca for sponsoring this event.
+          </div>
         </div>
       </section>
 
